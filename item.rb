@@ -5,4 +5,8 @@ class Item
   def initialize(sku)
     @sku = sku
   end
+
+  def ==(another_item)
+    self.sku == another_item.sku
+  end
 end

@@ -9,7 +9,7 @@ class Cart
   end
 
   def count_by(item)
-    items.select { |i| i.sku == item.sku }.count
+    items.select { |i| i == item }.count
   end
 
   def process(rules, klass_calculator)
