@@ -1,6 +1,6 @@
 require_relative('cart')
 require_relative('item')
-require_relative('price_calculator')
+require_relative('calculators/price')
 require_relative('price_rules/schema')
 
 RULES = PriceRules::Schema.build do
@@ -21,7 +21,7 @@ class CheckOut
   end
 
   def total
-    cart.process(rules, PriceCalculator).inject(0, :+)
+    cart.process(rules, Calculators::Price).inject(0, :+)
   end
 
   private
