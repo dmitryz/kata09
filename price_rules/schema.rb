@@ -1,3 +1,7 @@
+require_relative('data')
+require_relative('normal')
+require_relative('discount')
+
 module PriceRules
   class Schema
     @@rules = {}
@@ -5,7 +9,7 @@ module PriceRules
     class << self
       def build(&block)
         instance_eval(&block)
-        @@rules
+        Data.new(@@rules)
       end
 
       def discount(sku:, amount:, discount_on:, discount_price:)

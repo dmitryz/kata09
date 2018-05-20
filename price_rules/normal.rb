@@ -5,7 +5,7 @@ module PriceRules
       @amount = price
     end
 
-    def get(count:)
+    def calculate(count:)
       amount * count
     end
 

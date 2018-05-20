@@ -2,8 +2,6 @@ require_relative('cart')
 require_relative('item')
 require_relative('price_calculator')
 require_relative('price_rules/schema')
-require_relative('price_rules/normal')
-require_relative('price_rules/discount')
 
 RULES = PriceRules::Schema.build do
   discount sku: 'A', amount: 50, discount_on: 3, discount_price: 130

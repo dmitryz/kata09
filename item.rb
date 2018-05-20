@@ -1,12 +1,17 @@
 # Item
 class Item
-  attr_reader :sku
-
   def initialize(sku)
     @sku = sku
   end
 
-  def ==(another_item)
-    self.sku == another_item.sku
+  def to_s
+    sku
   end
+
+  def ==(another_item)
+    self.to_s == another_item.to_s
+  end
+
+private
+  attr_reader :sku
 end

@@ -7,9 +7,9 @@ class PriceCalculator
   end
 
   def calculate(item)
-    return 0 if calculated.include?(item.sku)
-    calculated << item.sku
-    price_rule(item).get(count: count_by(item))
+    return 0 if calculated.include?(item.to_s)
+    calculated << item.to_s
+    price_rule(item).calculate(count: count_by(item))
   end
 
   private
@@ -18,7 +18,7 @@ class PriceCalculator
   attr_accessor :calculated
 
   def price_rule(item)
-    rules[item.sku]
+    rules.get(item)
   end
 
   def count_by(item)

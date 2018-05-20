@@ -9,7 +9,7 @@ module PriceRules
       @discount_price = discount_price
     end
 
-    def get(count:)
+    def calculate(count:)
       discount_triggers(count) * discount_price +
         left_after_discounts(count) * price
     end
