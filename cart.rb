@@ -1,4 +1,4 @@
-# Cart of items implmentation
+# Cart of items implementation
 class Cart
   def initialize
     @items = []
