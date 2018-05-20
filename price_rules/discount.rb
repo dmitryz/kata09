@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PriceRules
   # Discount rule, discount calculation depends on count
   class Discount

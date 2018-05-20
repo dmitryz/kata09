@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative('cart')
 require_relative('item')
 require_relative('calculators/price')

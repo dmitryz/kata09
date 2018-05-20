@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Price Calculator depends on rules and cart
 module Calculators
   class Price

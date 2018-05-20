@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Item
 class Item
   def initialize(sku)
@@ -9,9 +11,10 @@ class Item
   end
 
   def ==(another_item)
-    self.to_s == another_item.to_s
+    to_s == another_item.to_s
   end
 
-private
+  private
+
   attr_reader :sku
 end

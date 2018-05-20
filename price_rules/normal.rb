@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PriceRules
   # Usual price rule
   class Normal

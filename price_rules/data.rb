@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PriceRules
   class Data
     def initialize(rules)
@@ -8,7 +10,7 @@ module PriceRules
       rules[item.to_s]
     end
 
-  private
+    private
 
     attr_reader :rules
   end

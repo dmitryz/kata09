@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Cart of items implementation
 class Cart
   def initialize
