@@ -13,8 +13,8 @@ RULES = PriceRules::Schema.build do
 end
 
 class CheckOut
-  def initialize(rules)
-    @cart = Cart.new
+  def initialize(rules, cart: Cart.new)
+    @cart = cart
     @rules = rules
   end
 
@@ -22,8 +22,8 @@ class CheckOut
     cart.scan(sku)
   end
 
-  def total
-    cart.process(rules, Calculators::Price).inject(0, :+)
+  def total(calculator: Calculators::Price)
+    cart.process(rules, calculator).inject(0, :+)
   end
 
   private
