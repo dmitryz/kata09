@@ -3,6 +3,7 @@
 require_relative('data')
 require_relative('normal')
 require_relative('discount')
+require_relative('split')
 
 module PriceRules
   class Schema
@@ -12,6 +13,10 @@ module PriceRules
       def build(&block)
         instance_eval(&block)
         Data.new(@@rules)
+      end
+
+      def split(sku:, amount:, discount_after:, discount_price:)
+        @@rules[sku] = PriceRules::Split.new(price: amount, discount_after: discount_after, discount_price: discount_price)
       end
 
       def discount(sku:, amount:, discount_on:, discount_price:)

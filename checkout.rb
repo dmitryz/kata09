@@ -10,6 +10,7 @@ RULES = PriceRules::Schema.build do
   discount sku: 'B', amount: 30, discount_on: 2, discount_price: 45
   normal sku: 'C', amount: 20
   normal sku: 'D', amount: 15
+  split sku: 'S', amount: 33, discount_after: 10, discount_price: 15
 end
 
 class CheckOut
@@ -22,8 +23,8 @@ class CheckOut
     cart.scan(sku)
   end
 
-  def total(calculator: Calculators::Price)
-    cart.process(rules, calculator).inject(0, :+)
+  def total(calculator: Calculators::Price.new(rules, cart))
+    cart.process(calculator).inject(0, :+)
   end
 
   private

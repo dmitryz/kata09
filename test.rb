@@ -28,6 +28,11 @@ class TestPrice < Test::Unit::TestCase
     assert_equal(190, price('AAABBD'))
     assert_equal(190, price('DABABA'))
     assert_equal(40, price('CC'))
+
+    assert_equal(33, price('S'))
+    assert_equal(330, price('S'*10))
+    assert_equal(345, price('S'*11))
+    assert_equal(330 + 150, price('S'*20))
   end
 
   def test_incremental

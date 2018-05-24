@@ -6,6 +6,10 @@ module Calculators
     def initialize(rules, cart)
       @rules = rules
       @cart = cart
+      reset
+    end
+
+    def reset
       @calculated = []
     end
 

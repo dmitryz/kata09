@@ -14,8 +14,8 @@ class Cart
     items.select { |i| i == item }.count
   end
 
-  def process(rules, klass_calculator)
-    calculator = klass_calculator.new(rules, self)
+  def process(calculator)
+    calculator.reset
     items.map { |item| calculator.calculate(item) }
   end
 
