@@ -1,4 +1,5 @@
 ### Kata09: Back to the Checkout
+http://codekata.com/kata/kata09-back-to-the-checkout/
 
 1. Implemented Ruby philosophy of duck typing, on PriceRules module.
 As such we can quickly add any new custom price rule.
